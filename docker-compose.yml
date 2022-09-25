@@ -1,0 +1,19 @@
+version: '3.5'
+services:
+  api:
+    build: '.'
+    image: 'yara_api:latest'
+    restart: unless-stopped
+    ports:
+      - "8080:3000"
+    command: node ./node_modules/pm2/bin/pm2-runtime --watch start ./src/app.js
+    working_dir: '/opt'
+    volumes:
+      - ./src:/opt/src:ro
+    networks:
+      default:
+    read_only: true
+    tmpfs:
+      - /root/.pm2:uid=999,gid=999
+networks:
+    default:

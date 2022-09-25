@@ -1,0 +1,13 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "main": "src/app.js",
+  "author": "vinhjaxt",
+  "license": "ISC",
+  "private": true,
+  "dependencies": {
+    "fastify": "^4.3.0",
+    "mysql2": "^2.3.3",
+    "pm2": "^5.2.0"
+  }
+}
